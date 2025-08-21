@@ -2,4 +2,7 @@
     <string name="app_name">WordleClone</string>
     <string name="wordle_icon">Wordle Icon</string>
     <string name="wordle_title">Wordle Title\n</string>
+    <string name="play_button_text">Play</string>
+    <string name="playText">Play</string>
+    <string name="home_button">HomeButtonToGoToMain</string>
 </resources>

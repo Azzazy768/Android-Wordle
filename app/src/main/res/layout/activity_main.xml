@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <!--Wordle Icon -->
     <ImageView
         android:id="@+id/wordleIcon"
         android:layout_width="230dp"
@@ -22,6 +22,7 @@
         app:layout_constraintVertical_bias="0.372"
         app:srcCompat="@drawable/wordle_icon" />
 
+    <!--Wordle Title -->
     <ImageView
         android:id="@+id/wordleTitle"
         android:layout_width="wrap_content"
@@ -34,5 +35,18 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.657"
         app:srcCompat="@drawable/wordletitle" />
+
+    <Button
+        android:id="@+id/play_button"
+        android:layout_width="128dp"
+        android:layout_height="49dp"
+        android:backgroundTint="#000000"
+        android:text="@string/playText"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.754" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
