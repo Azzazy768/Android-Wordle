@@ -1,6 +1,10 @@
 package com.example.wordleclone;
 
+import android.graphics.Color;
 import android.text.SpannableString;
+import android.text.Spanned;
+import android.text.style.BackgroundColorSpan;
+import android.text.style.ForegroundColorSpan;
 
 import androidx.core.app.NavUtils;
 
@@ -52,21 +56,24 @@ public class WordleOperation {
         return charOccurences;
     }
 
-    public String checkGuess(String userGuess, Map<Character,Integer> charOccurences){
-        String returnString = "";
+    public SpannableString checkGuess(String userGuess, Map<Character,Integer> charOccurences){
+//        String returnString = "";
+        SpannableString returnString = new SpannableString(userGuess);
         char[] userGuessArr = userGuess.toCharArray();
         char[] gameWordarr = GameWord.toCharArray();
         for(int i = 0; i < userGuessArr.length; i++){
             if(userGuessArr[i] == gameWordarr[i]){
-                returnString = returnString + "<font color='#008000'>" + userGuessArr[i] + "</font>";
+//                returnString = returnString + "<font color='#008000'>" + userGuessArr[i] + "</font>";
+                returnString.setSpan(new ForegroundColorSpan(Color.GREEN),i,i+1, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
                 charOccurences.put(userGuessArr[i], charOccurences.get(userGuessArr[i])-1);
             }
             else if((userGuessArr[i] != gameWordarr[i] && GameWord.contains(String.valueOf(userGuessArr[i])) && (charOccurences.get(userGuessArr[i]) != 0)))
             {
-                returnString = returnString +"<font color='#FFFF00'>" +  userGuessArr[i] +"</font>" ;
+                returnString.setSpan(new ForegroundColorSpan(Color.YELLOW),i,i+1, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+//                returnString = returnString +"<font color='#FFFF00'>" +  userGuessArr[i] +"</font>" ;
             }
             else{
-              returnString = returnString  + userGuessArr[i];
+//              returnString = returnString  + userGuessArr[i];
             }
         }
         return returnString;

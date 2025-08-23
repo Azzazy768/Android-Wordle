@@ -8,6 +8,8 @@ import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.style.ForegroundColorSpan;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -57,15 +59,20 @@ public class PlayingScreen extends AppCompatActivity {
 
         EditText inputGuess = findViewById(R.id.InputGuess);
         TextView FirstGuess = findViewById(R.id.FirstGuess);
+        FirstGuess.setVisibility(View.INVISIBLE);
         Button submitButton = findViewById(R.id.Submit_Button);
 
         Character[] GuessedCharacters = new Character[5];
+        Animation fadeIn = AnimationUtils.loadAnimation(this,R.anim.fade_in);
 
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Map<Character,Integer> numOfOccurnces = new HashMap<>(operationObject.returnCharOccurences());
-                FirstGuess.setText(Html.fromHtml(operationObject.checkGuess(inputGuess.getText().toString(),numOfOccurnces)));
+                FirstGuess.setText(operationObject.checkGuess(inputGuess.getText().toString().toUpperCase(),numOfOccurnces));
+                FirstGuess.setVisibility(View.VISIBLE);
+                FirstGuess.startAnimation(fadeIn);
+//                FirstGuess.setText(Html.fromHtml(operationObject.checkGuess(inputGuess.getText().toString(),numOfOccurnces)));
             }
         });
 

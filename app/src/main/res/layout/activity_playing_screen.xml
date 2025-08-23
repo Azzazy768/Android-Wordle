@@ -7,6 +7,20 @@
     android:layout_height="match_parent"
     tools:context=".PlayingScreen">
 
+    <TextView
+        android:id="@+id/secondGuess"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:letterSpacing="0.66"
+        android:text="ABCDE"
+        android:textSize="105px"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.483"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.426" />
+
     <ImageButton
         android:id="@+id/Home_Button"
         android:layout_width="64dp"
@@ -52,13 +66,15 @@
         android:id="@+id/FirstGuess"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Random Word"
-        android:textSize="100px"
+        android:letterSpacing="0.66"
+        android:text="ABCDE"
+        android:textSize="105px"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.484"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.304" />
 
     <TextView
         android:id="@+id/Cheat"
@@ -70,6 +86,17 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.154" />
+        app:layout_constraintVertical_bias="0.071" />
+
+    <ImageView
+        android:id="@+id/FirstGuessBoxes"
+        android:layout_width="257dp"
+        android:layout_height="113dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.284"
+        app:srcCompat="@drawable/wordleboxes" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
